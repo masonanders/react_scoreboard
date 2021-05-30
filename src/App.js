@@ -1,8 +1,14 @@
 import React from "react";
+import { Reset } from "styled-reset";
 import Scoreboard from "./views/Scoreboard";
 
 function App() {
-  return <Scoreboard />;
+  return (
+    <>
+      <Reset />
+      <Scoreboard />
+    </>
+  );
 }
 
 export default App;
