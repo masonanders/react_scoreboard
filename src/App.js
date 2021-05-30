@@ -1,11 +1,16 @@
 import React from "react";
-import { Reset } from "styled-reset";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 import Scoreboard from "./views/Scoreboard";
+
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+`;
 
 function App() {
   return (
     <>
-      <Reset />
+      <GlobalStyle />
       <Scoreboard />
     </>
   );
