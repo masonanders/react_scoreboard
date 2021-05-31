@@ -18,8 +18,18 @@ const ProgressBar = styled.div`
   overflow: hidden;
 `;
 
+const ProgressInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+`;
+
 const TeamProgress = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
   height: 100%;
   width: 50%;
   box-sizing: border-box;
@@ -40,22 +50,26 @@ export default function ({ teams, pointsToWin }) {
       <ProgressBar>
         <TeamProgress
           left
-          color="red"
+          color="rgba(255, 50, 50, 0.85)"
           percentComplete={(team1.elapsedTimeInSeconds / 300) * 100 + "%"}
         >
-          {team1.teamName}
+          {team1.elapsedTimeInSeconds}
         </TeamProgress>
         <TeamProgress
           right
-          color="blue"
+          color="rgba(50, 50, 255, 0.85)"
           percentComplete={
             (team2.elapsedTimeInSeconds / pointsToWin) * 100 + "%"
           }
         >
-          {team2.teamName}
+          {team2.elapsedTimeInSeconds}
         </TeamProgress>
       </ProgressBar>
-      <h4>{pointsToWin}</h4>
+      <ProgressInfo>
+        <h4>{team1.teamName}</h4>
+        <h4>{pointsToWin}</h4>
+        <h4>{team2.teamName}</h4>
+      </ProgressInfo>
     </Container>
   );
 }
