@@ -32,27 +32,7 @@ export default function Scoreboard() {
   return (
     <Container>
       <Timer>{ElapsedGameTimeFormatted}</Timer>
-      <ProgressTracker />
+      <ProgressTracker teams={Teams} pointsToWin={PointsToWin} />
     </Container>
   );
 }
-
-// {
-//   ElapsedGameTime: 0,
-//   ElapsedGameTimeFormatted: "00:00",
-//   PointsToWin: 300,
-//   Teams: [
-//     {
-//       teamName: "Red",
-//       isActive: false,
-//       timerStartedAt: null,
-//       elapsedTimeInSeconds: 0
-//     },
-//     {
-//       teamName: "Blue",
-//       isActive: false,
-//       timerStartedAt: null,
-//       elapsedTimeInSeconds: 0
-//     }
-//   ]
-// };
